@@ -104,9 +104,17 @@ def search_similar_images(selected_image_path):
 
 # Streamlit UI
 st.title("LooksGood Visual Search Engine Demo")
+st.subheader('Important to Note')
+st.write('To be able to host this proof of concept demo for free, data storage was extremely limited.In this version, there'
+         'the model can only choose from 55,000 individual items of clothing as suggestions and a brief title as a description'
+         'as opposed to a visual description. For example,the images here are described as blue cotton sweater as opposed to'
+         'blue cotton v-neck sweater with yellow floral print'
+         'Further iterations with much more descriptive data will produce much better suggestions')
 st.subheader('Instructions')
 st.write('Select your image and text weight to determine how much you want your recommendations to be based on just looks')
 st.write('Enter the search query of your choice and indefinitely select your favorite items to hone in on your style')
+st.write('To start a new search, click on the Clear Suggestions  button. The home page will still have results from'
+         ' whatever was typed in the search bar')
 # Initialize session state if it doesn't exist
 if "selected_images" not in st.session_state:
     st.session_state.selected_images = []
